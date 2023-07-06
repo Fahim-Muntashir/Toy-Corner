@@ -18,14 +18,12 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              {/* Your website logo */}
               <Link to="/">
                 <img className="w-60" src={imgLogo} alt="Logo" />
               </Link>
             </div>
           </div>
           <div className="hidden md:ml-6 md:flex md:items-center">
-            {/* Nav links */}
             <div className="ml-10 flex items-baseline space-x-4">
               <Link
                 to="/"
@@ -36,6 +34,12 @@ const Navbar = () => {
               <Link
                 to="/all-toys"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                All Toys
+              </Link>
+              <Link
+                to="/blog"
+                className="text-gray-300 hover:bg-yellow-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 All Toys
               </Link>
@@ -73,7 +77,7 @@ const Navbar = () => {
                         {username}
                       </span>
                     </button>
-                    {/* Dropdown menu for user profile */}
+                    {/* progile some more design  */}
                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
                       <Link
                         to="/profile"
