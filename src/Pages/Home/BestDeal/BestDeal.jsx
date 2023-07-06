@@ -1,4 +1,5 @@
 import React from "react";
+import car1 from "../../../assets/rcar.png";
 
 const YourComponent = () => {
   return (
@@ -8,24 +9,20 @@ const YourComponent = () => {
         <div className="flex flex-col md:flex-row items-stretch justify-between bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12">
           <div className="flex flex-col justify-center md:w-1/2">
             <h1 className="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white">
-              Best Deal
+              Best Deal in Remote Car
             </h1>
             <p className="text-base lg:text-xl text-gray-800 dark:text-white mt-2">
               Save upto <span className="font-bold">50%</span>
             </p>
           </div>
-          <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end">
-            <img
-              src="https://i.ibb.co/J2BtZdg/Rectangle-56-1.png"
-              alt=""
-              className=""
-            />
+          <div className="md:w-2/3 lg:w-3/4 mt-8 md:mt-0 flex justify-center md:justify-end">
+            <img src={car1} alt="" className="" />
           </div>
         </div>
         <div className="md:w-4/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-0 md:px-4 lg:px-6 flex flex-col justify-center relative">
           <div className="flex flex-col justify-center">
             <h1 className="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white">
-              Game Console
+              Car Remote Console
             </h1>
             <p className="text-base lg:text-xl text-gray-800 dark:text-white">
               Save Upto <span className="font-bold">30%</span>
