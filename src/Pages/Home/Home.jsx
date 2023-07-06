@@ -1,14 +1,12 @@
-import { Outlet } from "react-router-dom";
-import Footer from "../Shared/Footer/Footer";
-import Navbar from "../Shared/Navbar/Navbar";
 import BestDeal from "./BestDeal/BestDeal";
 import Banner from "./Banner/Banner";
-import LoginForm from "../Login/SignIn";
+import Gallery from "./Gallary/Gallary";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
+      <Gallery></Gallery>
       <BestDeal></BestDeal>
     </div>
   );
