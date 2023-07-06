@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 const SignIn = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-
-  // Add form submission and event handlers here
-
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    console.log("jeu");
+    console.log(username, password);
+  };
   return (
     <div className="container mx-auto">
       <div className="flex justify-center px-6 my-12">
@@ -14,12 +17,17 @@ const SignIn = () => {
             className="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
             style={{
               backgroundImage:
-                "url('https://source.unsplash.com/K4mSJ7kc0As/600x800')",
+                "url('https://images.pexels.com/photos/5560035/pexels-photo-5560035.jpeg')",
             }}
           ></div>
           <div className="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
-            <h3 className="pt-4 text-2xl text-center">Welcome Back!</h3>
-            <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+            <h3 className="pt-4 text-2xl text-center text-yellow-300">
+              Welcome Back!
+            </h3>
+            <form
+              onSubmit={handleSignIn}
+              className="px-8 pt-6 pb-8 mb-4 bg-white rounded"
+            >
               <div className="mb-4">
                 <label
                   className="block mb-2 text-sm font-bold text-gray-700"
@@ -44,16 +52,13 @@ const SignIn = () => {
                   Password
                 </label>
                 <input
-                  className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                  className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="password"
                   type="password"
                   placeholder="******************"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <p className="text-xs italic text-red-500">
-                  Please choose a password.
-                </p>
               </div>
               <div className="mb-4">
                 <input
@@ -68,21 +73,20 @@ const SignIn = () => {
                 </label>
               </div>
               <div className="mb-6 text-center">
-                <button
-                  className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
-                  type="button"
-                >
-                  Sign In
-                </button>
+                <input
+                  type="submit"
+                  className="w-full px-4 py-2 font-bold text-white bg-yellow-500 rounded-full hover:bg-yellow-400 focus:outline-none focus:shadow-outline"
+                  value="Sign In"
+                />
               </div>
               <hr className="mb-6 border-t" />
               <div className="text-center">
-                <a
+                <Link
                   className="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                  href="#"
+                  to="/signup"
                 >
                   Create an Account!
-                </a>
+                </Link>
               </div>
               <div className="text-center">
                 <a
