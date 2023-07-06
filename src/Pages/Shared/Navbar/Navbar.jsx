@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import imgLogo from "../../../assets/logo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -12,19 +13,14 @@ const Navbar = () => {
   const username = "John Doe"; // Example: User's name
 
   return (
-    <nav className="bg-gray-800">
+    <nav className="dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               {/* Your website logo */}
               <Link to="/">
-                <img
-                  className="h-8 w-auto"
-                  src="/path/to/logo.png"
-                  alt="Logo"
-                />
-                Your Website Name
+                <img className="w-60" src={imgLogo} alt="Logo" />
               </Link>
             </div>
           </div>

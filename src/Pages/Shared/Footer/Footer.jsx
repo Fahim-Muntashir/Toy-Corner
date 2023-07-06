@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="bg-base-200 ">
+    <div className="bg-black">
       <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 footer p-10 text-base-content">
         <div>
           <span className="footer-title">Services</span>
@@ -23,7 +23,7 @@ const Footer = () => {
           <a className="link link-hover">Cookie policy</a>
         </div>
       </footer>
-      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 footer px-10 py-4 border-t bg-base-200 rounded-md text-base-content border-base-300">
         <div className="items-center grid-flow-col">
           <svg
             width="24"

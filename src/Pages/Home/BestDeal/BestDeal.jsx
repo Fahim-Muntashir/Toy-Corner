@@ -19,7 +19,7 @@ const YourComponent = () => {
             <img src={car1} alt="" className="" />
           </div>
         </div>
-        <div className="md:w-4/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-0 md:px-4 lg:px-6 flex flex-col justify-center relative">
+        <div className="md:w-4/12 lg:w-5/12 xl:w-4/12 2xl:w-3/12 bg-gray-50 dark:bg-gray-900 py-6 px-6 md:py-0 md:px-4 lg:px-6 flex flex-col justify-center relative">
           <div className="flex flex-col justify-center">
             <h1 className="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white">
               Car Remote Console
