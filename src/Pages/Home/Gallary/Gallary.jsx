@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import img1 from "../../../assets/gallaryImg/image1.png";
+import img from "../../../assets/gallaryImg/image.png";
 import img2 from "../../../assets/gallaryImg/image2.png";
 import img3 from "../../../assets/gallaryImg/image3.png";
-import img4 from "../../../assets/gallaryImg/image4.png";
 import img5 from "../../../assets/gallaryImg/image5.png";
-import img6 from "../../../assets/gallaryImg/image7.png";
+import img4 from "../../../assets/gallaryImg/image4.png";
 
 const Gallery = () => {
   return (
@@ -48,7 +48,7 @@ const Gallery = () => {
             <motion.img
               alt="gallery"
               className="block h-full w-full rounded-lg object-cover object-center"
-              src={img3}
+              src={img}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -64,7 +64,7 @@ const Gallery = () => {
             <motion.img
               alt="gallery"
               className="block h-full w-full rounded-lg object-cover object-center"
-              src={img4}
+              src={img3}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -92,7 +92,7 @@ const Gallery = () => {
             <motion.img
               alt="gallery"
               className="block h-full w-full rounded-lg object-cover object-center"
-              src={img6}
+              src={img4}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
