@@ -1,12 +1,13 @@
-import React from "react";
+import React, { Children } from "react";
+import child from "../../../assets/child.png";
 
 const Banner = () => {
   return (
     <section>
-      <div className="bg-black text-white py-20">
-        <div className="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
-          <div className="flex flex-col w-full lg:w-1/3 justify-center items-start p-8">
-            <h1 className="text-3xl md:text-5xl p-2 text-yellow-300 tracking-loose">
+      <div className="dark:bg-gray-900 text-white py-1 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 container mx-auto flex flex-col md:flex-row items-center justify-between md:my-24">
+          <div className="flex flex-col w-full lg:w-3/4 justify-center items-start p-8">
+            <h1 className="text-4xl md:text-5xl p-2 text-yellow-300 tracking-loose">
               TechFest
             </h1>
             <h2 className="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">
@@ -23,30 +24,12 @@ const Banner = () => {
               Explore Now
             </a>
           </div>
-          <div className="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3 justify-center">
-            <div className="h-48 flex flex-wrap content-center">
-              <div>
-                <img
-                  className="inline-block mt-28 hidden xl:block"
-                  src="https://user-images.githubusercontent.com/54521023/116969935-c13d5b00-acd4-11eb-82b1-5ad2ff10fb76.png"
-                  alt="image1"
-                />
-              </div>
-              <div>
-                <img
-                  className="inline-block mt-24 md:mt-0 p-8 md:p-0"
-                  src="https://user-images.githubusercontent.com/54521023/116969931-bedb0100-acd4-11eb-99a9-ff5e0ee9f31f.png"
-                  alt="image2"
-                />
-              </div>
-              <div>
-                <img
-                  className="inline-block mt-28 hidden lg:block"
-                  src="https://user-images.githubusercontent.com/54521023/116969939-c1d5f180-acd4-11eb-8ad4-9ab9143bdb50.png"
-                  alt="image3"
-                />
-              </div>
-            </div>
+          <div className="p-8 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3 justify-center">
+            <img
+              className="inline-block mt-5 md:mt-0 p-8 md:p-0"
+              src={child}
+              alt="image2"
+            />
           </div>
         </div>
       </div>

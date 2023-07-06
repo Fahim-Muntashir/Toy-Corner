@@ -6,7 +6,7 @@ const YourComponent = () => {
     <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mx-auto py-9 md:py-12 px-4 md:px-6">
       {/* more free and premium Tailwind CSS components at https://tailwinduikit.com/ */}
       <div className="flex items-stretch justify-center flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
-        <div className="flex flex-col md:flex-row items-stretch justify-between bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12">
+        <div className="flex flex-col md:flex-row items-stretch justify-between bg-gray-50 dark:bg-gray-900 py-6 px-6 md:py-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12">
           <div className="flex flex-col justify-center md:w-1/2">
             <h1 className="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white">
               Best Deal in Remote Car
