@@ -8,7 +8,7 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const isLoggedIn = true; // Example: Check if the user is logged in
+  const isLoggedIn = false; // Example: Check if the user is logged in
   const username = "John Doe"; // Example: User's name
 
   return (
