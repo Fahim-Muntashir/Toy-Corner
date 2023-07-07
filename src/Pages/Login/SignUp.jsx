@@ -6,7 +6,6 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [photoURL, setPhotoURL] = useState("");
-
   const handleRegistration = (event) => {
     event.preventDefault();
     console.log(name, email, password, photoURL);

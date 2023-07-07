@@ -89,30 +89,27 @@ const Tabs = ({ color }) => {
                         {carTabData[0]?.toys[0].name}
                       </h2>
                       <h2 className="text-2xl">
-                        Price: <span className="text-yellow-400">${30}</span>
+                        Price:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[0]?.toys[0].price}
+                        </span>
                       </h2>
-                      {/* <Rating
-                        placeholderRating={3.5}
-                        emptySymbol={}
-                        placeholderSymbol={
-                          <img
-                            src="assets/images/star-red.png"
-                            className="icon"
-                          />
-                        }
-                        fullSymbol={
-                          <img
-                            src="assets/images/star-yellow.png"
-                            className="icon"
-                          />
-                        }
-                      /> */}
+                      <h2 className="text-2xl">
+                        Ratings:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[0]?.toys[0].rating}
+                        </span>
+                        __star
+                      </h2>
+
                       <p>
                         Click the button to View More Details of Your Next
                         Toys....
                       </p>
                       <div className="card-actions justify-start">
-                        <button className="btn btn-primary">Watch</button>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
                       </div>
                     </div>
                     <figure>
@@ -132,11 +129,31 @@ const Tabs = ({ color }) => {
                     </figure>
                     <div className="card-body">
                       <h2 className="card-title">
+                        {" "}
                         {carTabData[0]?.toys[1].name}
                       </h2>
-                      <p>Click the button to watch on Jetflix app.</p>
+                      <h2 className="text-2xl">
+                        Price:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[0]?.toys[1].price}
+                        </span>
+                      </h2>
+                      <h2 className="text-2xl">
+                        Ratings:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[0]?.toys[1].rating}
+                        </span>
+                        __star
+                      </h2>
+
+                      <p>
+                        Click the button to View More Details of Your Next
+                        Toys....
+                      </p>
                       <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -151,19 +168,63 @@ const Tabs = ({ color }) => {
                       />
                     </figure>
                     <div className="card-body">
-                      <h2 className="card-title">New movie is released!</h2>
-                      <p>Click the button to watch on Jetflix app.</p>
+                      <h2 className="card-title">
+                        {" "}
+                        {carTabData[1]?.toys[1].name}
+                      </h2>
+                      <h2 className="text-2xl">
+                        Price:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[1]?.toys[1].price}
+                        </span>
+                      </h2>
+                      <h2 className="text-2xl">
+                        Ratings:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[1]?.toys[1].rating}
+                        </span>
+                        __star
+                      </h2>
+
+                      <p>
+                        Click the button to View More Details of Your Next
+                        Toys....
+                      </p>
                       <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
                       </div>
                     </div>
                   </div>
                   <div className="card card-side my-7 bg-base-100 shadow-xl glass">
                     <div className="card-body">
-                      <h2 className="card-title">New movie is released!</h2>
-                      <p>Click the button to watch on Jetflix app.</p>
+                      <h2 className="card-title">
+                        {" "}
+                        {carTabData[1]?.toys[0].name}
+                      </h2>
+                      <h2 className="text-2xl">
+                        Price:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[1]?.toys[0].price}
+                        </span>
+                      </h2>
+                      <h2 className="text-2xl">
+                        Ratings:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[1]?.toys[0].rating}
+                        </span>
+                        __star
+                      </h2>
+
+                      <p>
+                        Click the button to View More Details of Your Next
+                        Toys....
+                      </p>
                       <div className="card-actions justify-start">
-                        <button className="btn btn-primary">Watch</button>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
                       </div>
                     </div>
                     <figure>
@@ -178,10 +239,32 @@ const Tabs = ({ color }) => {
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
                   <div className="card card-side my-7 bg-base-100 shadow-xl glass">
                     <div className="card-body">
-                      <h2 className="card-title">New movie is released!</h2>
-                      <p>Click the button to watch on Jetflix app.</p>
+                      <h2 className="card-title">
+                        {" "}
+                        {carTabData[2]?.toys[1].name}
+                      </h2>
+                      <h2 className="text-2xl">
+                        Price:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[2]?.toys[1].price}
+                        </span>
+                      </h2>
+                      <h2 className="text-2xl">
+                        Ratings:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[2]?.toys[1].rating}
+                        </span>
+                        __star
+                      </h2>
+
+                      <p>
+                        Click the button to View More Details of Your Next
+                        Toys....
+                      </p>
                       <div className="card-actions justify-start">
-                        <button className="btn btn-primary">Watch</button>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
                       </div>
                     </div>
                     <figure>
@@ -201,10 +284,32 @@ const Tabs = ({ color }) => {
                       />
                     </figure>
                     <div className="card-body">
-                      <h2 className="card-title">New movie is released!</h2>
-                      <p>Click the button to watch on Jetflix app.</p>
+                      <h2 className="card-title">
+                        {" "}
+                        {carTabData[2]?.toys[0].name}
+                      </h2>
+                      <h2 className="text-2xl">
+                        Price:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[2]?.toys[0].price}
+                        </span>
+                      </h2>
+                      <h2 className="text-2xl">
+                        Ratings:{" "}
+                        <span className="text-yellow-400">
+                          {carTabData[2]?.toys[0].rating}
+                        </span>
+                        __star
+                      </h2>
+
+                      <p>
+                        Click the button to View More Details of Your Next
+                        Toys....
+                      </p>
                       <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
+                        <button className="btn btn-primary">
+                          View Details
+                        </button>
                       </div>
                     </div>
                   </div>
