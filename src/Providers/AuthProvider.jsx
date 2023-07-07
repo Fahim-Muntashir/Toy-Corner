@@ -8,7 +8,7 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import app from "../firebase/firebase.config";
+import app from "./firebase.config";
 
 export const AuthContext = createContext();
 
@@ -19,18 +19,8 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const authInfo = {
-    createUser,
-    signIn,
-    signInWithGoogle,
-    logOut,
-    user,
-    loading,
-    error,
-  };
-
   // Function to create a new user with email and password
-  function createUser(email, password) {
+  const createUser = (email, password) => {
     setLoading(true);
     setError(null);
 
@@ -38,10 +28,10 @@ const AuthProvider = ({ children }) => {
       .then(({ user }) => setUser(user))
       .catch((error) => setError(error.message))
       .finally(() => setLoading(false));
-  }
+  };
 
   // Function to sign in with Google
-  function signInWithGoogle() {
+  const signInWithGoogle = () => {
     setLoading(true);
     setError(null);
 
@@ -51,10 +41,10 @@ const AuthProvider = ({ children }) => {
       .then(({ user }) => setUser(user))
       .catch((error) => setError(error.message))
       .finally(() => setLoading(false));
-  }
+  };
 
   // Function to log out the current user
-  function logOut() {
+  const logOut = () => {
     setLoading(true);
     setError(null);
 
@@ -62,17 +52,17 @@ const AuthProvider = ({ children }) => {
       .then(() => setUser(null))
       .catch((error) => setError(error.message))
       .finally(() => setLoading(false));
-  }
+  };
 
   // Function to sign in with email and password
-  function signIn(email, password) {
+  const signIn = (email, password) => {
     setLoading(true);
 
     return signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => setUser(user))
       .catch((error) => setError(error.message))
       .finally(() => setLoading(false));
-  }
+  };
 
   useEffect(() => {
     // Subscribe to authentication state changes
@@ -83,6 +73,16 @@ const AuthProvider = ({ children }) => {
 
     return unsubscribe;
   }, []);
+
+  const authInfo = {
+    createUser,
+    signIn,
+    signInWithGoogle,
+    logOut,
+    user,
+    loading,
+    error,
+  };
 
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

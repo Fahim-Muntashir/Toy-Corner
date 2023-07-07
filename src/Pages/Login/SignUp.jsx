@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const SignUp = () => {
+  const { createUser } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [photoURL, setPhotoURL] = useState("");
   const handleRegistration = (event) => {
     event.preventDefault();
-    console.log(name, email, password, photoURL);
-    // Perform registration logic here
+    // console.log(name, email, password, photoURL);
+    createUser(email, password);
   };
 
   return (

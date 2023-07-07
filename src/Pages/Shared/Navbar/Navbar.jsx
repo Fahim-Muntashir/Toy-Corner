@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import imgLogo from "../../../assets/logo.png";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const isLoggedIn = false; // Example: Check if the user is logged in
-  const username = "John Doe"; // Example: User's name
+  console.log(user);
 
+  let isLoggedIn;
+  if (user) {
+    isLoggedIn = true;
+  } else {
+    isLoggedIn = false;
+  }
+  // Example: Check if the user is logged in
+  const username = user?.displayName; // Example: User's name
   return (
     <nav className="dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -203,12 +212,12 @@ const Navbar = () => {
                   >
                     Profile
                   </Link>
-                  <Link
-                    to="/logout"
+                  <button
+                    onClick={logOut}
                     className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                   >
                     Logout
-                  </Link>
+                  </button>
                 </div>
               </div>
             </>
