@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import "./Tabs.css";
+import Rating from "react-rating";
 
 const Tabs = ({ color }) => {
+  const [carTabData, setCarTabData] = useState([]);
+  // console.log(carTabData);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/toycategory")
+      .then((res) => res.json())
+      .then((carTabData) => setCarTabData(carTabData));
+  }, []);
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="w-full">
           <ul
             className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
@@ -16,7 +26,7 @@ const Tabs = ({ color }) => {
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 1
                     ? "text-white bg-" + color + "-600"
-                    : "text-" + color + "-600 bg-white")
+                    : "text-" + color + "-600 bg-yellow-500")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -26,7 +36,7 @@ const Tabs = ({ color }) => {
                 href="#link1"
                 role="tablist"
               >
-                Profile
+                {carTabData[0]?.category}
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -35,7 +45,7 @@ const Tabs = ({ color }) => {
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 2
                     ? "text-white bg-" + color + "-600"
-                    : "text-" + color + "-600 bg-white")
+                    : "text-" + color + "-600 bg-yellow-500")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -45,7 +55,7 @@ const Tabs = ({ color }) => {
                 href="#link2"
                 role="tablist"
               >
-                Settings
+                {carTabData[1]?.category}
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -54,7 +64,7 @@ const Tabs = ({ color }) => {
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 3
                     ? "text-white bg-" + color + "-600"
-                    : "text-" + color + "-600 bg-white")
+                    : "text-" + color + "-600 bg-yellow-500")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -64,43 +74,140 @@ const Tabs = ({ color }) => {
                 href="#link3"
                 role="tablist"
               >
-                Options
+                {carTabData[2]?.category}
               </a>
             </li>
           </ul>
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+          <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded">
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                  <p>
-                    Collaboratively administrate empowered markets via
-                    plug-and-play networks. Dynamically procrastinate B2C users
-                    after installed base benefits.
-                    <br />
-                    <br /> Dramatically visualize customer directed convergence
-                    without revolutionary ROI.
-                  </p>
+                  <div className="card card-side my-7 bg-base-100 shadow-xl glass">
+                    <div className="card-body">
+                      <h2 className="card-title">
+                        {" "}
+                        {carTabData[0]?.toys[0].name}
+                      </h2>
+                      <h2 className="text-2xl">
+                        Price: <span className="text-yellow-400">${30}</span>
+                      </h2>
+                      {/* <Rating
+                        placeholderRating={3.5}
+                        emptySymbol={}
+                        placeholderSymbol={
+                          <img
+                            src="assets/images/star-red.png"
+                            className="icon"
+                          />
+                        }
+                        fullSymbol={
+                          <img
+                            src="assets/images/star-yellow.png"
+                            className="icon"
+                          />
+                        }
+                      /> */}
+                      <p>
+                        Click the button to View More Details of Your Next
+                        Toys....
+                      </p>
+                      <div className="card-actions justify-start">
+                        <button className="btn btn-primary">Watch</button>
+                      </div>
+                    </div>
+                    <figure>
+                      <img
+                        src={carTabData[0]?.toys[1].picture}
+                        className="h-full"
+                      />
+                    </figure>
+                  </div>
+                  <div className="card card-side bg-base-100 shadow-xl glass">
+                    <figure className="figure-img">
+                      <img
+                        src={carTabData[0]?.toys[0].picture}
+                        alt="Movie"
+                        className="h-full w-full"
+                      />
+                    </figure>
+                    <div className="card-body">
+                      <h2 className="card-title">
+                        {carTabData[0]?.toys[1].name}
+                      </h2>
+                      <p>Click the button to watch on Jetflix app.</p>
+                      <div className="card-actions justify-end">
+                        <button className="btn btn-primary">Watch</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                  <p>
-                    Completely synergize resource taxing relationships via
-                    premier niche markets. Professionally cultivate one-to-one
-                    customer service with robust ideas.
-                    <br />
-                    <br />
-                    Dynamically innovate resource-leveling customer service for
-                    state of the art customer service.
-                  </p>
+                  <div className="card card-side bg-base-100 shadow-xl glass">
+                    <figure className="figure-img">
+                      <img
+                        src={carTabData[0]?.toys[0].picture}
+                        alt="Movie"
+                        className="h-full w-full"
+                      />
+                    </figure>
+                    <div className="card-body">
+                      <h2 className="card-title">New movie is released!</h2>
+                      <p>Click the button to watch on Jetflix app.</p>
+                      <div className="card-actions justify-end">
+                        <button className="btn btn-primary">Watch</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card card-side my-7 bg-base-100 shadow-xl glass">
+                    <div className="card-body">
+                      <h2 className="card-title">New movie is released!</h2>
+                      <p>Click the button to watch on Jetflix app.</p>
+                      <div className="card-actions justify-start">
+                        <button className="btn btn-primary">Watch</button>
+                      </div>
+                    </div>
+                    <figure>
+                      <img
+                        src={carTabData[0]?.toys[1].picture}
+                        alt="Movie"
+                        className="h-full"
+                      />
+                    </figure>
+                  </div>
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                  <p>
-                    Efficiently unleash cross-media information without
-                    cross-media value. Quickly maximize timely deliverables for
-                    real-time schemas.
-                    <br />
-                    <br /> Dramatically maintain clicks-and-mortar solutions
-                    without functional solutions.
-                  </p>
+                  <div className="card card-side my-7 bg-base-100 shadow-xl glass">
+                    <div className="card-body">
+                      <h2 className="card-title">New movie is released!</h2>
+                      <p>Click the button to watch on Jetflix app.</p>
+                      <div className="card-actions justify-start">
+                        <button className="btn btn-primary">Watch</button>
+                      </div>
+                    </div>
+                    <figure>
+                      <img
+                        src={carTabData[0]?.toys[1].picture}
+                        alt="Movie"
+                        className="h-full"
+                      />
+                    </figure>
+                  </div>{" "}
+                  <div className="card card-side bg-base-100 shadow-xl glass">
+                    <figure className="figure-img">
+                      <img
+                        src={carTabData[0]?.toys[0].picture}
+                        alt="Movie"
+                        className="h-full w-full"
+                      />
+                    </figure>
+                    <div className="card-body">
+                      <h2 className="card-title">New movie is released!</h2>
+                      <p>Click the button to watch on Jetflix app.</p>
+                      <div className="card-actions justify-end">
+                        <button className="btn btn-primary">Watch</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
