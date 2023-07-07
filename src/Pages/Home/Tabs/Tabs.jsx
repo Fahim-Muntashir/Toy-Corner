@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Tabs.css";
-import Rating from "react-rating";
 
 const Tabs = ({ color }) => {
   const [carTabData, setCarTabData] = useState([]);
@@ -151,7 +150,7 @@ const Tabs = ({ color }) => {
                         Toys....
                       </p>
                       <div className="card-actions justify-end">
-                        <button className="btn btn-primary">
+                        <button className="btn btn-warning">
                           View Details
                         </button>
                       </div>
@@ -191,7 +190,7 @@ const Tabs = ({ color }) => {
                         Toys....
                       </p>
                       <div className="card-actions justify-end">
-                        <button className="btn btn-primary">
+                        <button className="btn btn-warning">
                           View Details
                         </button>
                       </div>
@@ -222,7 +221,7 @@ const Tabs = ({ color }) => {
                         Toys....
                       </p>
                       <div className="card-actions justify-start">
-                        <button className="btn btn-primary">
+                        <button className="btn btn-warning">
                           View Details
                         </button>
                       </div>
@@ -262,7 +261,7 @@ const Tabs = ({ color }) => {
                         Toys....
                       </p>
                       <div className="card-actions justify-start">
-                        <button className="btn btn-primary">
+                        <button className="btn btn-warning">
                           View Details
                         </button>
                       </div>
