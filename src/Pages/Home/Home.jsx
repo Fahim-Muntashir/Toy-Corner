@@ -2,6 +2,7 @@ import BestDeal from "./BestDeal/BestDeal";
 import Banner from "./Banner/Banner";
 import Gallery from "./Gallary/Gallary";
 import Tabs from "./Tabs/Tabs";
+import Contact from "./sendSms/contact";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Gallery></Gallery>
       <Tabs></Tabs>
       <BestDeal></BestDeal>
+      <Contact></Contact>
     </div>
   );
 };
