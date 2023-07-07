@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const SignUp = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, signInWithGoogle } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -100,6 +100,13 @@ const SignUp = () => {
                   value="Sign Up"
                 />
               </div>
+              <button
+                onClick={signInWithGoogle}
+                type="button"
+                class="w-full px-4 py-2 font-bold text-white dark:bg-gray-900 rounded-full hover:bg-yellow-400 focus:outline-none focus:shadow-outline"
+              >
+                Sign Up with <span className="text-orange-400">Google</span>
+              </button>
               <hr className="mb-6 border-t" />
               <div className="text-center">
                 <Link

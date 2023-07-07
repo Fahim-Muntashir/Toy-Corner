@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const SignIn = () => {
-  const [username, setUsername] = useState("");
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
+
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const handleSignIn = (event) => {
     event.preventDefault();
-    console.log("jeu");
-    console.log(username, password);
+    signIn(email, password);
   };
   return (
     <div className="container mx-auto">
@@ -34,15 +36,14 @@ const SignIn = () => {
                   className="block mb-2 text-sm font-bold text-gray-700"
                   htmlFor="username"
                 >
-                  Username
+                  Email
                 </label>
                 <input
                   className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="username"
-                  type="text"
-                  placeholder="Username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  type="email"
+                  placeholder="email"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="mb-4">
@@ -80,6 +81,13 @@ const SignIn = () => {
                   value="Sign In"
                 />
               </div>
+              <button
+                onClick={signInWithGoogle}
+                type="button"
+                class="w-full px-4 py-2 font-bold text-white dark:bg-gray-900 rounded-full hover:bg-yellow-400 focus:outline-none focus:shadow-outline"
+              >
+                Sign in with <span className="text-orange-400">Google</span>
+              </button>
               <hr className="mb-6 border-t" />
               <div className="text-center">
                 <Link

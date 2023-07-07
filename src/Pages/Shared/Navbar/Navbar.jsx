@@ -94,12 +94,12 @@ const Navbar = () => {
                       >
                         Profile
                       </Link>
-                      <Link
-                        to="/logout"
+                      <button
+                        onClick={logOut}
                         className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                       >
                         Logout
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </>
@@ -165,10 +165,10 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            to="/all-toys"
+            to="/blog"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
-            All Toys
+            Blog{" "}
           </Link>
           <Link
             to="/my-toys"
