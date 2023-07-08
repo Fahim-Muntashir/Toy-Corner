@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import imgLogo from "../../../assets/logo.png";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -13,14 +13,21 @@ const Navbar = () => {
 
   // console.log(user);
 
+  // profile click then the logout
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownVisible(!isDropdownVisible);
+  };
+
   let isLoggedIn;
   if (user) {
     isLoggedIn = true;
   } else {
     isLoggedIn = false;
   }
-  // Example: Check if the user is logged in
-  const username = user?.displayName; // Example: User's name
+  // if the user is logged in
+  const username = user?.displayName;
   return (
     <nav className="dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,7 +57,7 @@ const Navbar = () => {
                 to="/blog"
                 className="text-gray-300 hover:bg-yellow-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
-                All Toys
+                Blogs
               </Link>
               <Link
                 to="/my-toys"
@@ -66,42 +73,39 @@ const Navbar = () => {
                   >
                     Add A Toy
                   </Link>
-                  <Link
-                    to="/blogs"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    Blogs
-                  </Link>
                   <div className="relative">
                     <button
                       type="button"
                       className="flex items-center focus:outline-none"
+                      onClick={toggleDropdown}
                     >
                       <img
                         className="h-8 w-8 rounded-full"
-                        src="/path/to/profile-picture.png"
+                        src={user?.photoURL}
                         alt="Profile"
                       />
                       <span className="ml-2 text-gray-300 hover:text-white">
                         {username}
                       </span>
                     </button>
-                    {/* progile some more design  */}
-                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
-                      <Link
-                        to="/profile"
-                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                      >
-                        Profile
-                      </Link>
-                      <button
-                        onClick={logOut}
-                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                      >
-                        Logout
-                      </button>
-                    </div>
-                  </div>
+
+                    {isDropdownVisible && (
+                      <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
+                        <Link
+                          to="/profile"
+                          className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                        >
+                          Profile
+                        </Link>
+                        <button
+                          onClick={logOut}
+                          className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                        >
+                          Logout
+                        </button>
+                      </div>
+                    )}
+                  </div>{" "}
                 </>
               ) : (
                 <Link
@@ -197,7 +201,7 @@ const Navbar = () => {
                 >
                   <img
                     className="h-8 w-8 rounded-full"
-                    src="/path/to/profile-picture.png"
+                    src={user.photoURL}
                     alt="Profile"
                   />
                   <span className="ml-2 text-gray-300 hover:text-white">

@@ -39,34 +39,51 @@ function AllToy() {
   //   };
 
   return (
-    <div>
-      <h1>All Toys</h1>
-      <input
-        type="text"
-        placeholder="Search by Toy name"
-        value={searchTerm}
-        onChange={handleSearch}
-      />
+    <div className="max-w-7xl mx-auto">
+      <div className="flex justify-center items-center">
+        <div className="container mx-auto rounded-b-lg dark:bg-gray-900 p-14">
+          <h1 className="text-center font-bold text-white text-4xl mb-5">
+            Find Your Next Toy Car By Name
+          </h1>
+          <div className="sm:flex w-1/2 mx-auto items-center bg-white rounded-lg overflow-hidden px-2 py-3 justify-between">
+            <input
+              value={searchTerm}
+              onChange={handleSearch}
+              className="text-black font-bold flex-grow outline-none px-6"
+              type="text"
+              placeholder="Search Your Next Toy Car"
+            />
+          </div>
+        </div>
+      </div>
 
       {isLoading ? (
         <p>Loading...</p>
       ) : (
         <div className="overflow-x-auto">
           <table className="table">
-            <thead>
+            <thead className="text-gray-200 text-lg">
               <tr>
+                <th>Toy</th>
                 <th>Seller</th>
                 <th>Toy Name</th>
                 <th>Sub-category</th>
                 <th>Price</th>
-                <th>Available Quantity</th>
+                <th>Quantity</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               {filteredToys.slice(0, 20).map((toy) => (
                 <tr key={toy._id}>
-                  <td>{toy.seller}</td>
+                  <td>
+                    <img
+                      className="w-44 object-cover h-44"
+                      src={toy.pictureUrl}
+                      alt=""
+                    />
+                  </td>
+                  <td>{toy.sellerName}</td>
                   <td>{toy.name}</td>
                   <td>{toy.subCategory}</td>
                   <td>{toy.price}</td>

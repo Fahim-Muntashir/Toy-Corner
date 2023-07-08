@@ -8,13 +8,13 @@ const Banner = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="h-screen flex flex-col justify-center items-center bg-gray-900 text-white"
+      className="h-screen flex flex-col justify-center m items-center  bg-gray-900 text-white"
     >
       <motion.section
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 container mx-auto flex flex-col md:flex-row items-center justify-between md:my-24"
+        className="max-w-7xl mx-auto px-4 sm:py-6 lg:px-8 container my-5 mx-auto flex flex-col md:flex-row items-center justify-between md:my-24"
       >
         <div className="flex flex-col w-full lg:w-3/4 justify-center items-start p-8">
           <motion.h1
