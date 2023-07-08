@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const AddToyPage = () => {
   const { user } = useContext(AuthContext);
@@ -24,10 +25,12 @@ const AddToyPage = () => {
     quantity,
     description,
   };
+  const notify = () =>
+    toast.success("Successfully Added Your Toy...Add More !!!!");
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Logic to handle the form submission and send the data to the server
+    // handle the form submission and send the data to the server
     setPictureUrl("");
     setName("");
     setSellerName("");
@@ -47,13 +50,14 @@ const AddToyPage = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("Your TOy added succesfully");
+          notify();
         }
       });
   };
 
   return (
     <div className="flex mx-auto dark:bg-gray-900 justify-center items-center">
+      <Toaster />
       <div className="container mx-auto my-4 px-4 lg:px-20">
         <div className="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mx-auto rounded-2xl shadow-2xl">
           <div className="flex mx-auto">
