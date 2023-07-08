@@ -1,41 +1,55 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const AddToyPage = () => {
+  const { user } = useContext(AuthContext);
+
   const [pictureUrl, setPictureUrl] = useState("");
   const [name, setName] = useState("");
   const [sellerName, setSellerName] = useState("");
-  const [sellerEmail, setSellerEmail] = useState("");
   const [subCategory, setSubCategory] = useState("");
   const [price, setPrice] = useState("");
   const [rating, setRating] = useState("");
   const [quantity, setQuantity] = useState("");
   const [description, setDescription] = useState("");
 
+  const toys = {
+    pictureUrl,
+    name,
+    sellerName,
+    sellerEmail: user.email,
+    subCategory,
+    price,
+    rating,
+    quantity,
+    description,
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Logic to handle the form submission and send the data to the server
-    // You can access the form field values from the component's state variables
-    console.log({
-      pictureUrl,
-      name,
-      sellerName,
-      sellerEmail,
-      subCategory,
-      price,
-      rating,
-      quantity,
-      description,
-    });
-    // Reset the form fields
     setPictureUrl("");
     setName("");
     setSellerName("");
-    setSellerEmail("");
     setSubCategory("");
     setPrice("");
     setRating("");
     setQuantity("");
     setDescription("");
+
+    fetch("http://localhost:5000/alltoy", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(toys),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          alert("Your TOy added succesfully");
+        }
+      });
   };
 
   return (
@@ -76,9 +90,10 @@ const AddToyPage = () => {
                 className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                 type="email"
                 placeholder="Seller Email"
-                value={sellerEmail}
-                onChange={(e) => setSellerEmail(e.target.value)}
+                value={user.email}
+                unchanged
               />
+
               <input
                 className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                 type="text"
