@@ -11,7 +11,7 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  console.log(user);
+  // console.log(user);
 
   let isLoggedIn;
   if (user) {

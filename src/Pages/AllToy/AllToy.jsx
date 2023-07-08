@@ -1,25 +1,20 @@
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 function AllToy() {
+  const { user, logOut } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchToys('http://localhost:5000/alltoy');
+    fetch("http://localhost:5000/alltoy")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setToys(data);
+        setIsLoading(false);
+      });
   }, []);
-
-  const fetchToys = async () => {
-    try {
-      // Fetch toys data from the backend API
-      const response = await fetch('/api/toys');
-      const data = await response.json();
-      setToys(data);
-      setIsLoading(false);
-    } catch (error) {
-      console.error('Error fetching toys:', error);
-    }
-  };
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -29,24 +24,29 @@ function AllToy() {
     return toy.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
-  const handleViewDetails = (toyId) => {
-    // Check if the user is logged in
-    const isLoggedIn = /* Check if the user is logged in */;
+  //   const handleViewDetails = (toyId) => {
+  //     // Check if the user is logged in
+  //     const isLoggedIn = /* Check if the user is logged in */;
 
-    if (isLoggedIn) {
-      // Redirect to the Details Page for the specific toyId
-      // You can use react-router-dom or a similar routing library for this
-      // Example: history.push(`/toys/${toyId}`);
-    } else {
-      // Redirect to the Login Page
-      // Example: history.push('/login');
-    }
-  };
+  //     if (isLoggedIn) {
+  //       // Redirect to the Details Page for the specific toyId
+  //       // You can use react-router-dom or a similar routing library for this
+  //       // Example: history.push(`/toys/${toyId}`);
+  //     } else {
+  //       // Redirect to the Login Page
+  //       // Example: history.push('/login');
+  //     }
+  //   };
 
   return (
     <div>
       <h1>All Toys</h1>
-      <input type="text" placeholder="Search by Toy name" value={searchTerm} onChange={handleSearch} />
+      <input
+        type="text"
+        placeholder="Search by Toy name"
+        value={searchTerm}
+        onChange={handleSearch}
+      />
 
       {isLoading ? (
         <p>Loading...</p>
@@ -71,7 +71,9 @@ function AllToy() {
                 <td>{toy.price}</td>
                 <td>{toy.quantity}</td>
                 <td>
-                  <button onClick={() => handleViewDetails(toy.id)}>View Details</button>
+                  <button onClick={() => handleViewDetails(toy.id)}>
+                    View Details
+                  </button>
                 </td>
               </tr>
             ))}
