@@ -35,7 +35,12 @@ const router = createBrowserRouter([
       },
       {
         path: "my-toys",
-        element: <MyToy></MyToy>,
+        element: (
+          <PrivateRoutes>
+            {" "}
+            <MyToy></MyToy>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "add-toy",
@@ -57,11 +62,16 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/alltoy/${params.id}`),
+          fetch(`https://toy-corner-server.onrender.com/alltoy/${params.id}`),
       },
       {
         path: "update/:id",
-        element: <Update></Update>,
+        element: (
+          <PrivateRoutes>
+            {" "}
+            <Update></Update>
+          </PrivateRoutes>
+        ),
       },
     ],
   },

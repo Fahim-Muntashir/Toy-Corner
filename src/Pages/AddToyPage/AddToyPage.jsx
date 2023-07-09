@@ -40,7 +40,7 @@ const AddToyPage = () => {
     setQuantity("");
     setDescription("");
 
-    fetch("http://localhost:5000/alltoy", {
+    fetch("https://toy-corner-server.onrender.com/alltoy", {
       method: "POST",
       headers: {
         "content-type": "application/json",

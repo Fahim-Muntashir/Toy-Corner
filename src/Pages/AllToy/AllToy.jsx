@@ -10,7 +10,7 @@ function AllToy() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/alltoy")
+    fetch("https://toy-corner-server.onrender.com/alltoy")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -27,7 +27,7 @@ function AllToy() {
   });
 
   const handleViewDetails = (toyId) => {
-    const isLoggedIn = user !== null; // Check if the user is logged in
+    const isLoggedIn = user !== null;
     console.log(toyId);
 
     if (isLoggedIn) {

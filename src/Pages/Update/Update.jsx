@@ -10,10 +10,10 @@ function Update() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/alltoy/${id}`)
+    fetch(`https://toy-corner-server.onrender.com/alltoy/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setToy(data); // Assuming the response is an array with a single toy object
+        setToy(data);
         setIsLoading(false);
       });
   }, [id]);
@@ -21,7 +21,7 @@ function Update() {
   const handleUpdate = (event) => {
     event.preventDefault();
 
-    fetch(`http://localhost:5000/alltoy/${id}`, {
+    fetch(`https://toy-corner-server.onrender.com/alltoy/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,9 @@ function Update() {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <span className="loading loading-infinity loading-lg mx-auto"></span>
+    );
   }
 
   return (

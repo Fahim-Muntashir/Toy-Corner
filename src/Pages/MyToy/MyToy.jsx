@@ -16,7 +16,7 @@ function MyToy() {
   };
   const email = user?.email;
   useEffect(() => {
-    fetch(`http://localhost:5000/alltoy?email=${email}&sort=1`)
+    fetch(`https://toy-corner-server.onrender.com/alltoy?email=${email}&sort=1`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -35,7 +35,7 @@ function MyToy() {
   const deleteToy = (id) => {
     const sure = confirm("Are You Want To Delete!!!");
     if (sure) {
-      fetch(`http://localhost:5000/alltoy/${id}`, {
+      fetch(`https://toy-corner-server.onrender.com/alltoy/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

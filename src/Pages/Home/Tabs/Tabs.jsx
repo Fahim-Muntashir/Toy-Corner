@@ -6,7 +6,7 @@ const Tabs = ({ color }) => {
   // console.log(carTabData);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toycategory")
+    fetch("https://toy-corner-server.onrender.com/toycategory")
       .then((res) => res.json())
       .then((carTabData) => setCarTabData(carTabData));
   }, []);
