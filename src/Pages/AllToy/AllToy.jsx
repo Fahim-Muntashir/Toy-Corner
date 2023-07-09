@@ -16,7 +16,7 @@ function AllToy() {
         setToys(data);
         setIsLoading(false);
       });
-  }, []);
+  }, [user]);
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
