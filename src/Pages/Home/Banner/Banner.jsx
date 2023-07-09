@@ -31,7 +31,7 @@ const Banner = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            Space: The Timeless Infinity
+            Space: The Timeless Buy Toy
           </motion.h2>
           <motion.p
             className="text-sm md:text-base text-gray-50 mb-4"
@@ -39,8 +39,8 @@ const Banner = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            Explore your favorite events and register now to showcase your
-            talent and win exciting prizes.
+            Explore your favorite Toys and register now to showcase your toy and
+            win earn Moneyyy.
           </motion.p>
           <motion.a
             href="#"
