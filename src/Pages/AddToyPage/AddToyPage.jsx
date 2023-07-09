@@ -26,7 +26,7 @@ const AddToyPage = () => {
     description,
   };
   const notify = () =>
-    toast.success("Successfully Added Your Toy...Add More !!!!");
+    toast.success("Successfully Added Your Toy...Add More !!!!!!");
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
