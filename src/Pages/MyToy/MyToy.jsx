@@ -41,12 +41,16 @@ function MyToy() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          handleReamining();
           if (data.deletedCount > 0) {
             toast.success("Successfully Deleted");
+            handleReamining();
           }
         });
     }
+  };
+
+  const updatePage = (id) => {
+    navigate(`/update/${id}`);
   };
 
   return (
@@ -122,10 +126,16 @@ function MyToy() {
                   <td>{toy.quantity}</td>
                   <td>
                     <button
-                      className="btn btn-error text-white btn-xs font-bold"
+                      className="btn btn-error text-white btn-xs me-1 font-bold"
                       onClick={() => deleteToy(toy._id)}
                     >
                       Delete Car
+                    </button>
+                    <button
+                      className="btn btn-success my-4text-white btn-xs font-bold"
+                      onClick={() => updatePage(toy._id)}
+                    >
+                      Update Info
                     </button>
                   </td>
                 </tr>
