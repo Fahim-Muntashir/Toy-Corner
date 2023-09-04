@@ -10,7 +10,7 @@ const Tabs = ({ color }) => {
       .then((res) => res.json())
       .then((carTabData) => setCarTabData(carTabData));
   }, []);
-  const [openTab, setOpenTab] = React.useState(1);
+  const [openTab, setOpenTab] = React.useState(2);
   return (
     <>
       <div className="flex flex-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

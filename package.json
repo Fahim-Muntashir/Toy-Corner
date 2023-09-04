@@ -20,9 +20,11 @@
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
+    "react-intersection-observer": "^9.5.2",
     "react-rating": "^2.0.5",
     "react-router-dom": "^6.14.1",
     "react-tabs": "^6.0.1",
+    "react-waypoint": "^10.3.0",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
@@ -38,5 +40,9 @@
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
-  }
+  },
+  "description": "��#\u0000 \u0000b\u00007\u0000a\u00001\u00001\u0000-\u0000t\u0000o\u0000y\u0000-\u0000m\u0000a\u0000r\u0000k\u0000e\u0000t\u0000p\u0000l\u0000a\u0000c\u0000e\u0000-\u0000c\u0000l\u0000i\u0000e\u0000n\u0000t\u0000-\u0000s\u0000i\u0000d\u0000e\u0000-\u0000F\u0000a\u0000h\u0000i\u0000m\u0000M\u0000u\u0000n\u0000t\u0000a\u0000s\u0000h\u0000i\u0000r\u00001\u0000\r\u0000 \u0000",
+  "main": "postcss.config.js",
+  "author": "",
+  "license": "ISC"
 }
